@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Angular Web App</title>
+<link rel="stylesheet" href="css/bootstrap.css">
+<link rel="stylesheet" href="css/main.css">
+
+</head>
+<body ng-app="webApp">
+<div ng-include='"templates/header.html"'></div>
+
+<div ng-view class="view"></div>
+
+<div ng-include='"templates/footer.html"'></div>
+
+
+<script src="js/vendor/jquery-1.11.3.min.js"></script>
+<script src="js/angular-min.js"></script>
+<script src="js/angular-route-min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

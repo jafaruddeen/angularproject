@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Angular Web App</title>
+<link rel="stylesheet" href="css/bootstrap.css">
+<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<div ng-app="example">
+    <div ng-controller="Ctrl">
+        <p ng-repeat="name in names">{{name}} = {{name | removeSpacesThenLowercase}}</p>        
+    </div>
+</div>
+<script src="js/vendor/jquery-1.11.3.min.js"></script> 
+<script src="js/angular-min.js"></script> 
+<script src="js/angular-route-min.js"></script> 
+<script src="js/bootstrap.min.js"></script> 
+<script type="text/javascript">
+var filterExample = angular.module('example',[]);
+
+filterExample.filter('removeSpacesThenLowercase', function () {
+        return function (text) {
+			
+			var str = text.replace(/-/g, ' ');
+			return str.toLowerCase();
+        };
+})
+
+
+function Ctrl($scope) {
+    $scope.names = ['Santi-Carzola','Theo-Walcott','Oliver-Giroud','Jack-Wilshere']
+}
+
+</script>
+</body>
+</html>
